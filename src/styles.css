@@ -97,3 +97,12 @@ ul {
 .current {
   background: rgb(203, 229, 244);
 }
+
+p {
+  font-size: 10px;
+  padding: 5px;
+}
+
+.linkgit {
+  text-decoration: none;
+}
