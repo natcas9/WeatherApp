@@ -13,6 +13,9 @@ ul {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0.3px;
 }
+.container {
+  margin-top: 20px;
+}
 
 .weatherapp {
   border-radius: 20px;
@@ -110,4 +113,8 @@ a {
 
 .linkgit {
   text-decoration: none;
+}
+
+#link {
+  color: rgb(0, 157, 255);
 }
