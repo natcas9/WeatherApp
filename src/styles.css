@@ -50,6 +50,10 @@ ul {
   font-size: 40px;
 }
 
+.time {
+  margin-top: 0;
+}
+
 .info {
   font-size: 14px;
   font-weight: 500;
