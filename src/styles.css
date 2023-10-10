@@ -29,6 +29,7 @@ ul {
   max-width: 400px;
   box-shadow: 1px -1px 21px 1px rgba(0, 0, 0, 0.3);
   margin-top: 30px auto;
+  padding: 16px;
 }
 .search {
   border-radius: 20px;
