@@ -122,3 +122,11 @@ a {
 #link {
   color: rgb(0, 157, 255);
 }
+
+#weatherdesc {
+  margin-top: none;
+  position: relative;
+  top: -10px;
+  font-weight: bold;
+  color: rgb(74, 74, 74);
+}
