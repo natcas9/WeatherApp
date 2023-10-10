@@ -41,6 +41,8 @@ form.addEventListener("submit", submitCity);
 function changeTempOne(event) {
   //change from F-C
   event.preventDefault();
+  conversionCEL.classList.add("conv");
+  conversionFAR.classList.remove("conv");
   let change = document.querySelector("#temperature-num");
   change.innerHTML = Math.round(celsiustemperature);
 }
@@ -48,6 +50,8 @@ function changeTempOne(event) {
 function changeTempTwo(event) {
   //change from C-F
   event.preventDefault();
+  conversionFAR.classList.add("conv");
+  conversionCEL.classList.remove("conv");
   let change = document.querySelector("#temperature-num");
   let conversion = Math.round((celsiustemperature * 9) / 5 + 32);
   change.innerHTML = conversion;
