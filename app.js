@@ -23,6 +23,11 @@ function showTemperature(response) {
   let wind = Math.round(response.data.wind.speed);
   let win = document.querySelector(".wind");
   win.innerHTML = wind;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 //select input
@@ -109,6 +114,10 @@ function showWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let win = document.querySelector(".wind");
   win.innerHTML = wind;
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let formcurrent = document.querySelector(".current");
