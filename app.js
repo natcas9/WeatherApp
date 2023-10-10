@@ -30,6 +30,7 @@ function showTemperature(response) {
   );
   let description = document.querySelector("#weatherdesc");
   description.innerHTML = response.data.weather[0].description;
+  celsiustemperature = response.data.main.temp;
 }
 
 //select input
@@ -38,17 +39,18 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
 
 function changeTempOne(event) {
-  //change from C-F
-  event.preventDefault();
-  let change = document.querySelector("#temperature-num");
-  change.innerHTML = "20";
-}
-
-function changeTempTwo(event) {
   //change from F-C
   event.preventDefault();
   let change = document.querySelector("#temperature-num");
-  change.innerHTML = "-6.6";
+  change.innerHTML = Math.round(celsiustemperature);
+}
+
+function changeTempTwo(event) {
+  //change from C-F
+  event.preventDefault();
+  let change = document.querySelector("#temperature-num");
+  let conversion = Math.round((celsiustemperature * 9) / 5 + 32);
+  change.innerHTML = conversion;
 }
 
 //variables change temperatures
@@ -59,6 +61,8 @@ conversionCEL.addEventListener("click", changeTempOne);
 let conversionFAR = document.querySelector("#temperature-far");
 
 conversionFAR.addEventListener("click", changeTempTwo);
+
+let celsiustemperature = null;
 
 //Date
 let completeDate = document.querySelector(".date");
@@ -122,6 +126,7 @@ function showWeather(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiustemperature = response.data.main.temp;
 }
 
 let formcurrent = document.querySelector(".current");
