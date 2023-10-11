@@ -64,6 +64,11 @@ ul {
   font-size: 12px;
 }
 
+#info-wind {
+  margin-bottom: 20px;
+  padding: 10px, 0;
+}
+
 .button-search {
   padding: 5px;
   margin: 10px;
@@ -85,6 +90,7 @@ ul {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 15px;
+  margin-right: 5px;
 }
 
 .btnsearch:hover {
@@ -133,4 +139,9 @@ a {
   top: -10px;
   font-weight: bold;
   color: rgb(74, 74, 74);
+}
+
+.info-date {
+  color: rgb(184, 182, 182);
+  font-size: 12px;
 }

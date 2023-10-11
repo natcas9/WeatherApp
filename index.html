@@ -33,12 +33,19 @@
         </form>
         <ul>
           <li class="city" id="title"></li>
-          <li class="date">today</li>
+          <li class="date"></li>
           <li class="weather"><img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="image" id="icon"><span id="temperature-num">20</span> <span class="conv units"><a href=https://www.metric-conversions.org/temperature/celsius-to-fahrenheit.htm class="conv" id="temperature-cel">°C |</a><a href=https://www.metric-conversions.org/temperature/celsius-to-fahrenheit.htm class="conv" id="temperature-far"> °F</a></li></span>
-          <li id="weatherdesc">description</li>
+          <li id="weatherdesc"></li>
           <li class="info">Humidity: <span class="humidity">81</span> %</li>
-          <li class="info">Wind: <span class="wind">2 </span> km/h</li>
+          <li class="info" id="info-wind">Wind: <span class="wind">2 </span> km/h</li>
         </ul>
+        <div class="grid">
+          <h3 class="info-date">Mon</h3>
+          <h3 class="info-date">Tue</h3>
+          <h3 class="info-date">Wed</h3>
+          <h3 class="info-date">Thur</h3>
+          <h3 class="info-date">Fri</h3>
+        </div>
         <div class="grid">
           <h3>☀️</h3>
           <h3>🌦️</h3>
@@ -47,11 +54,11 @@
           <h3>🌩️</h3>
         </div>
         <div class="grid">
-          <h3 class="info-weather">20°C</h3>
-          <h3 class="info-weather">30°C</h3>
-          <h3 class="info-weather">25°C</h3>
-          <h3 class="info-weather">18°C</h3>
-          <h3 class="info-weather">20°C</h3>
+          <h3 class="info-weather">20°<span class="info-date">20°</span></h3>
+          <h3 class="info-weather">30° <span class="info-date">20°</span></h3>
+          <h3 class="info-weather">25° <span class="info-date">20°</span></h3>
+          <h3 class="info-weather">18° <span class="info-date">20°</span></h3>
+          <h3 class="info-weather">20° <span class="info-date">20°</span></h3>
         </div>
         <br />
 
