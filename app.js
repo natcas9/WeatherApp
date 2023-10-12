@@ -36,31 +36,6 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-//not using this function
-/*
-function showWeather(response) {
-  let h1 = document.querySelector("#title");
-  let temperature = Math.round(response.data.main.temp);
-  h1.innerHTML = response.data.name;
-  let weather = document.querySelector("#temperature-num");
-  weather.innerHTML = temperature;
-  let humidity = Math.round(response.data.main.humidity);
-  let hum = document.querySelector(".humidity");
-  hum.innerHTML = humidity;
-  let wind = Math.round(response.data.wind.speed);
-  let win = document.querySelector(".wind");
-  win.innerHTML = wind;
-  let description = document.querySelector("#weatherdesc");
-  description.innerHTML = response.data.weather[0].description;
-  icon.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  celsiustemperature = response.data.main.temp;
-  getForecast(response.data.coords);
-}
-*/
-
 //select input
 let form = document.querySelector("#search-form");
 //button event
