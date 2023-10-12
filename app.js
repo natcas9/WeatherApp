@@ -14,6 +14,8 @@ function submitCity(event) {
 
 function showTemperature(response) {
   console.log(response.data);
+  let h1 = document.querySelector("#title");
+  h1.innerHTML = response.data.name;
   let temp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#temperature-num");
   temperature.innerHTML = temp;
@@ -31,7 +33,33 @@ function showTemperature(response) {
   let description = document.querySelector("#weatherdesc");
   description.innerHTML = response.data.weather[0].description;
   celsiustemperature = response.data.main.temp;
+  getForecast(response.data.coord);
 }
+
+//not using this function
+/*
+function showWeather(response) {
+  let h1 = document.querySelector("#title");
+  let temperature = Math.round(response.data.main.temp);
+  h1.innerHTML = response.data.name;
+  let weather = document.querySelector("#temperature-num");
+  weather.innerHTML = temperature;
+  let humidity = Math.round(response.data.main.humidity);
+  let hum = document.querySelector(".humidity");
+  hum.innerHTML = humidity;
+  let wind = Math.round(response.data.wind.speed);
+  let win = document.querySelector(".wind");
+  win.innerHTML = wind;
+  let description = document.querySelector("#weatherdesc");
+  description.innerHTML = response.data.weather[0].description;
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  celsiustemperature = response.data.main.temp;
+  getForecast(response.data.coords);
+}
+*/
 
 //select input
 let form = document.querySelector("#search-form");
@@ -107,30 +135,19 @@ function retrievePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(showWeather);
+  axios.get(url).then(showTemperature);
 }
 
-function showWeather(response) {
-  let h1 = document.querySelector("#title");
-  let temperature = Math.round(response.data.main.temp);
-  console.log(response.data.main.temp);
-  console.log(response.data);
-  h1.innerHTML = response.data.name;
-  let weather = document.querySelector("#temperature-num");
-  weather.innerHTML = temperature;
-  let humidity = Math.round(response.data.main.humidity);
-  let hum = document.querySelector(".humidity");
-  hum.innerHTML = humidity;
-  let wind = Math.round(response.data.wind.speed);
-  let win = document.querySelector(".wind");
-  win.innerHTML = wind;
-  let description = document.querySelector("#weatherdesc");
-  description.innerHTML = response.data.weather[0].description;
-  icon.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  celsiustemperature = response.data.main.temp;
+function displayForecast(response) {
+  console.log(response.data.daily);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 let formcurrent = document.querySelector(".current");
