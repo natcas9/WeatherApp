@@ -4,7 +4,7 @@ function submitCity(event) {
   let searchInput = document.querySelector("#search-input");
   let city = document.querySelector("#title");
   city.innerHTML = searchInput.value;
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric`;
   console.log(apiUrl);
   console.log(apiKey);
@@ -131,7 +131,7 @@ function currentTemp() {
 
 function retrievePosition(position) {
   console.log(position);
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
@@ -144,8 +144,8 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -157,7 +157,7 @@ formcurrent.addEventListener("click", currentTemp);
 function cityTemp() {
   let city = document.querySelector("#title");
   city.innerHTML = "London";
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
@@ -170,7 +170,7 @@ function cityTempny() {
   let city = document.querySelector("#title");
   city.innerHTML = "New York";
   let name = "New York";
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
@@ -182,7 +182,7 @@ cityNewYork.addEventListener("click", cityTempny);
 function cityTempmad() {
   let city = document.querySelector("#title");
   city.innerHTML = "Madrid";
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
@@ -195,7 +195,7 @@ function cityTempmex() {
   let city = document.querySelector("#title");
   city.innerHTML = "Mexico City";
   let name = "Mexico City";
-  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
