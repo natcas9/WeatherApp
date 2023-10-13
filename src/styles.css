@@ -8,11 +8,6 @@ ul {
   margin-right: 25px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 0.3px;
-}
 .container {
   margin-top: 20px;
 }
@@ -26,7 +21,7 @@ ul {
     rgb(126, 203, 244) 90.2%
   );
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 425px;
   box-shadow: 1px -1px 21px 1px rgba(0, 0, 0, 0.3);
   margin-top: 30px auto;
   padding: 16px;
@@ -98,7 +93,7 @@ ul {
 }
 
 .grid-button {
-  margin-top: none;
+  margin-top: 25px;
 }
 
 .conv {
@@ -144,4 +139,27 @@ a {
 .info-date {
   color: #4a4a4a;
   font-size: 12px;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
+#forecast {
+  margin-top: 15px;
 }
