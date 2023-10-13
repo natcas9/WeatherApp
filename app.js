@@ -4,13 +4,20 @@ function submitCity(event) {
   let searchInput = document.querySelector("#search-input");
   let city = document.querySelector("#title");
   city.innerHTML = searchInput.value;
+
+  searchCity(searchInput.value);
+  searchInput.value = "";
+}
+
+function searchCity(city) {
   let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
   console.log(apiUrl);
   console.log(apiKey);
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
-  searchInput.value = "";
 }
+
+searchCity("London");
 
 function showTemperature(response) {
   console.log(response.data);
