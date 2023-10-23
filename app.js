@@ -4,20 +4,13 @@ function submitCity(event) {
   let searchInput = document.querySelector("#search-input");
   let city = document.querySelector("#title");
   city.innerHTML = searchInput.value;
-
-  searchCity(searchInput.value);
-  searchInput.value = "";
-}
-
-function searchCity(city) {
   let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric`;
   console.log(apiUrl);
   console.log(apiKey);
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  searchInput.value = "";
 }
-
-searchCity("London");
 
 function showTemperature(response) {
   console.log(response.data);
@@ -85,6 +78,7 @@ let now = new Date();
 let year = now.getFullYear();
 let date = now.getDate(); //1, 2, 3
 
+//months
 let months = [
   "Jan",
   "Feb",
@@ -99,13 +93,6 @@ let months = [
   "Nov",
   "Dec",
 ];
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return days[day];
-}
 
 let month = months[now.getMonth()];
 
@@ -128,43 +115,7 @@ function retrievePosition(position) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
-
-  forecast.forEach(function (forecastDay, index) {
-    //appending a new column
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `
-    <div class="col-2">
-      <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-     
-      <img
-        src="http://openweathermap.org/img/wn/${
-          forecastDay.weather[0].icon
-        }@2x.png"
-        alt=""
-        width="42"
-      />
-      <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max"> ${Math.round(
-          forecastDay.temp.max
-        )}° </span>
-        <span class="weather-forecast-temperature-min"> ${Math.round(
-          forecastDay.temp.min
-        )}° </span>
-        </div>
-      </div>
-
-  `;
-    }
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-
-  forecastElement.innerHTML = forecastHTML;
+  console.log(response.data.daily);
 }
 
 function getForecast(coordinates) {
